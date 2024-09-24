@@ -68,30 +68,6 @@ El sistema permite realizar las siguientes operaciones sobre el inventario:
 - **DELETE**: Elimina un libro del inventario.
 - **SEARCH**: Permite buscar un libro en el inventario.
 
-### Pruebas
-
-El sistema debe ser probado utilizando un archivo CSV que contenga registros en formato JSON. Cada operación de búsqueda debe devolver la información del libro encontrado, incluyendo los tamaños originales y comprimidos del campo "Nombre del libro" utilizando Huffman y Compresión Aritmética.
-
-#### Ejemplo de Bitácora de Entrada
-
-```
-INSERT; {"isbn":"1234567890","name":"Cien Anos de Soledad","author":"Gabriel Garcia Marquez","category":"Ficcion","price":"20.00","quantity":"10"}
-INSERT; {"isbn":"0987654321","name":"El Principito","author":"Antoine de Saint-Exupery","category":"Ficcion","price":"15.00","quantity":"5"}
-PATCH; {"isbn":"0987654321","author":"Antoine de Saint-Exupery","price":"18.00"}
-DELETE; {"isbn":"1234567890"}
-```
-
-#### Ejemplo de Bitácora de Salida
-
-```
-{"isbn":"1122334455","name":"Don Quijote de la Mancha","author":"Miguel de Cervantes","category":"Clasicos","price":"25.00","quantity":"7","namesize":"48","namesizehuffman":"93","namesizearithmetic":"12"}
-{"isbn":"0987654321","name":"El Principito","author":"Antoine de Saint-Exupery","category":"Ficcion","price":"18.00","quantity":"5","namesize":"26","namesizehuffman":"44","namesizearithmetic":"6"}
-Equal: 0
-Decompress: 0
-Huffman: 2
-Arithmetic: 0
-```
-
 ## Preguntas y Respuestas Basadas en Pruebas
 
 1. **¿Cuál es el mejor algoritmo para comprimir estos datos?**
