@@ -57,6 +57,10 @@ La **Compresión Aritmética** también se aplica sobre el campo **Nombre del li
 - **Cola de Prioridad**: Utilizada para construir el árbol de Huffman.
 - **Rangos Numéricos**: Utilizados en la compresión aritmética para mantener los rangos de compresión sin pérdida de precisión.
 
+### Lectura y Escritura de Archivos
+
+El proyecto lee datos de `lab01_books.csv` y escribe los resultados en `Output_Jose_Garcia_Lab1.txt`. Asegúrate de que estos archivos estén presentes en el directorio raíz del proyecto antes de ejecutar.
+
 ## Funcionalidades
 
 ### Operaciones sobre el Inventario
