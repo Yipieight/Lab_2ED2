@@ -59,7 +59,7 @@ La **Compresión Aritmética** también se aplica sobre el campo **Nombre del li
 
 ## Lectura y Escritura de Archivos
 
-El proyecto lee datos de `lab01_books.csv` y escribe los resultados en `Output_Jose_Garcia_Lab1.txt`. Asegúrate de que estos archivos estén presentes en el directorio raíz del proyecto antes de ejecutar.
+El proyecto lee datos de `lab01_books.csv` y escribe los resultados en `Output_Jose_Garcia_Lab2.txt`. Asegúrate de que estos archivos estén presentes en el directorio raíz del proyecto antes de ejecutar.
 
 ## Funcionalidades
 
