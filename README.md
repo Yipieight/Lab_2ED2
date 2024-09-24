@@ -104,9 +104,10 @@ Arithmetic: 0
    Los nuevos requerimientos de compresión añaden complejidad, pero la reducción en los costos de almacenamiento y transmisión justifica los cambios realizados.
 
 4. **¿Qué recomendaciones harías para mejorar los algoritmos?**
-   Se recomienda mejorar el manejo de símbolos repetidos y ajustar los cálculos de precisión en la Compresión Aritmética para obtener mejores resultados.
+   - Ajustar las estructuras de datos, como las colas de prioridad, para reducir el tiempo de procesamiento en situaciones donde se manejan grandes cantidades de datos.
+   - Evaluar el uso de una **estructura híbrida** que combine lo mejor de ambos algoritmos para diferentes tipos de campos (por ejemplo, utilizar Huffman para nombres y Aritmética para descripciones largas).
+   - Implementar **compresión diferencial**, que almacene solo los cambios entre versiones sucesivas de los datos, en lugar de comprimir todo el campo de nuevo cada vez que se actualice.
 
 ## Conclusión
 
 El sistema desarrollado no solo optimiza el almacenamiento de datos del inventario de la librería "Libros y Más", sino que también demuestra la eficacia de los algoritmos de compresión vistos en clase. La correcta implementación de la **Codificación Huffman** y la **Compresión Aritmética** reduce significativamente los costos de almacenamiento y transmisión, manteniendo la integridad de los datos.
-
