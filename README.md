@@ -3,13 +3,14 @@
 
 ## Descripción del Proyecto
 
-Este proyecto forma parte del curso de **Estructura de Datos II**, y tiene como objetivo implementar soluciones de compresión de datos utilizando **Codificación Huffman** y **Compresión Aritmética** para optimizar el almacenamiento y transmisión de los registros de inventario de la librería "Libros y Más". Dado el crecimiento del inventario y la expansión a nuevas sucursales, es necesario reducir los costos asociados con el almacenamiento y la transmisión de estos datos.
+Este proyecto forma parte del curso de **Estructura de Datos II**, y tiene como objetivo implementar soluciones de compresión de datos utilizando **Codificación Huffman** y **Compresión Aritmética** para optimizar el almacenamiento y transmisión de los registros de inventario de la librería "Nombres" de los libros. Dado el crecimiento del inventario y la expansión a nuevas sucursales, es necesario reducir los costos asociados con el almacenamiento y la transmisión de estos datos.
 
 ## Objetivos
 
 - Implementar la Codificación Huffman para comprimir el campo **"Nombre del libro"** en el inventario.
 - Aplicar la Compresión Aritmética en el mismo campo para comparar su eficiencia.
 - Optimizar el uso del espacio en almacenamiento sin comprometer la integridad ni accesibilidad de los datos.
+- Comparar varios métodos para saber cual es mas eficiente.
 
 ## Estructura del Código
 
