@@ -24,7 +24,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new FileReader("100Klab01_search.csv"));
 
         String jsonLine = "";
-        File archivo = new File("Output_Jose_Garcia_Lab1.txt");
+        File archivo = new File("Output_Jose_Garcia_Lab2.txt");
         PrintWriter archivotxt = new PrintWriter(archivo);
 
         while ((jsonLine = r.readLine()) != null) {
