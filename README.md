@@ -73,7 +73,7 @@ El sistema permite realizar las siguientes operaciones sobre el inventario:
 - **DELETE**: Elimina un libro del inventario.
 - **SEARCH**: Permite buscar un libro en el inventario.
 
-## Preguntas y Respuestas Basadas en Pruebas
+## Preguntas y Respuestas Basadas en Pruebas. Tambien incluye recomendaciones
 
 1. **¿Cuál es el mejor algoritmo para comprimir estos datos?**
    La Codificación Huffman tiende a ser más eficiente para textos donde hay una distribución clara de frecuencias en los caracteres.
