@@ -1,8 +1,11 @@
 package org.example;
 
+import java.util.HashMap;
+
 public class BTree {
     private int t; // Grado mínimo del árbol B
     private Node root; // Nodo raíz del árbol B
+    private HashMap<String, Book> bookIndex = new HashMap<>();
 
     // Clase Node
     private class Node {
@@ -41,6 +44,7 @@ public class BTree {
 
     // Método de inserción en el árbol B
     public void insert(Book k) {
+        bookIndex.put(k.getName(),k);
         long isbn = Long.parseLong(k.getIsbn());
         Node r = root;
         if (r.n == 2 * t - 1) {
@@ -334,25 +338,7 @@ public class BTree {
 
     // Método de búsqueda por nombre
     public Book searchByName(String name) {
-        return searchByName(root, name);
-    }
-
-    private Book searchByName(Node x, String name) {
-        for (int i = 0; i < x.n; i++) {
-            if (x.keys[i].getName().equals(name)) {
-                return x.keys[i];
-            }
-            if (!x.leaf) {
-                Book result = searchByName(x.children[i], name);
-                if (result != null) {
-                    return result;
-                }
-            }
-        }
-        if (!x.leaf) {
-            return searchByName(x.children[(int) x.n], name);
-        }
-        return null;
+        return bookIndex.get(name);
     }
 
     public void getLenghOfEatchMethod(Book book) {

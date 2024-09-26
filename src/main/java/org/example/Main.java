@@ -15,13 +15,13 @@ public class Main {
     public static int Arithmetic = 0;
 
     public static void main(String[] args) throws IOException {
-        String hola = "Physical market woman add nothing machine prepare add save huge military still road difference wall ten class rise save task system campaign.";
-        System.out.println(hola.length());
 
         BTree bTree = new BTree(2); // Crear un árbol B de ordenamiento 5
         Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 
+        //Aqui se agrega el archivo de Book.csv
         BufferedReader r = new BufferedReader(new FileReader("100Klab01_books.csv"));
+        //Aqui se agrega el archivo de Search.csv
         BufferedReader br = new BufferedReader(new FileReader("100Klab01_search.csv"));
 
         String jsonLine = "";
