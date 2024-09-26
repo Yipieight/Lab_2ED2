@@ -24,7 +24,7 @@ El proyecto se organiza en varias clases, cada una encargada de una función esp
 2. **`BTree.java`**:
    - Implementa un **Árbol B** para organizar los registros del inventario y optimizar las búsquedas y actualizaciones de manera eficiente.
 
-3. **`ArithmeticCompression.java`**:
+3. **`ArithmeticCompressionInt.java`**:
    - Implementa el algoritmo de **Compresión Aritmética**, que comprime el campo "Nombre del libro" basado en la frecuencia de aparición de los caracteres.
 
 4. **`huffman.java`**:
