@@ -83,20 +83,11 @@ class Huffman {
         Map<Character, String> codigoHuffman = new HashMap<>();
         generarCodigos(raiz, "", codigoHuffman);
 
-        // Mostrar los códigos generados
-        System.out.println("Códigos Huffman para cada carácter:");
-        for (Map.Entry<Character, String> entry : codigoHuffman.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
-        }
-
         // Paso 4: Codificar la frase
         StringBuilder fraseCodificada = new StringBuilder();
         for (char c : frase.toCharArray()) {
             fraseCodificada.append(codigoHuffman.get(c));
         }
-
-        System.out.println("Frase codificada en bits: " + fraseCodificada);
-        System.out.println("Número total de bits: " + fraseCodificada.length());
         return fraseCodificada.length();
     }
 }

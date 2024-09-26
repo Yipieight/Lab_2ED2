@@ -363,19 +363,16 @@ public class BTree {
 
 
         if (size == sizeHuffman && size == sizeArithmetic) {
-            // Acción para el caso Equal
             Main.Equal++;
         }
 
 
         if (size < sizeHuffman && size < sizeArithmetic) {
-            // Acción para el caso Decompress
             Main.Decompress++;
         }
 
 
         if (sizeHuffman < size && sizeHuffman < sizeArithmetic) {
-            // Acción para el caso Huffman
             Main.Huffman++;
         }
 
@@ -405,10 +402,11 @@ public class BTree {
     }
 
     public int addNameSizeArithmetic(Book book) {
-        ArithmeticCompression compressor = new ArithmeticCompression(book.getName());
-        int compressedSize = (int) compressor.getCompressedSize(book.getName());
-        book.setNamesizearithmetic(String.valueOf(compressedSize));
-        return compressedSize;
+        ArithmeticCompressionInt compressor = new ArithmeticCompressionInt(book.getName());
+        var hola = compressor.compress(book.getName());
+        int result = (int) (hola.length() / 8);
+        book.setNamesizearithmetic(String.valueOf(hola.length()/8));
+        return result;
     }
 
 }
