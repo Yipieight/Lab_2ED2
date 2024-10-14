@@ -1,11 +1,12 @@
 package org.example;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class BTree {
     private int t; // Grado mínimo del árbol B
     private Node root; // Nodo raíz del árbol B
     private HashMap<String, Book> bookIndex = new HashMap<>();
+    private HashMap<String, Book> bookIndexName = new HashMap<>();
 
     // Clase Node
     private class Node {
@@ -44,7 +45,7 @@ public class BTree {
 
     // Método de inserción en el árbol B
     public void insert(Book k) {
-        bookIndex.put(k.getName(),k);
+        bookIndex.put(k.getIsbn(), k);
         long isbn = Long.parseLong(k.getIsbn());
         Node r = root;
         if (r.n == 2 * t - 1) {
@@ -157,17 +158,22 @@ public class BTree {
             switch (field) {
                 case "name":
                     book.setName(newValue);
+                    bookIndex.put(isbn, book);
                 case "author":
                     book.setAuthor(newValue);
+                    bookIndex.put(isbn, book);
                     break;
                 case "category":
                     book.setCategory(newValue);
+                    bookIndex.put(isbn, book);
                     break;
                 case "price":
                     book.setPrice(newValue);
+                    bookIndex.put(isbn, book);
                     break;
                 case "quantity":
                     book.setQuantity(newValue);
+                    bookIndex.put(isbn, book);
                     break;
             }
         }
@@ -175,6 +181,10 @@ public class BTree {
 
     // Método de eliminación
     public void delete(String isbn) {
+        if (isbn.equals("9780001095984")) {
+            System.out.println();
+        }
+        bookIndex.remove(isbn);
         if (root == null) {
             return;
         }
@@ -187,6 +197,14 @@ public class BTree {
             }
         }
 
+    }
+
+    public void changeKeyMap(){
+        for (Map.Entry<String, Book> entry : bookIndex.entrySet()) {
+            // Modificamos la clave, aquí como ejemplo la convertimos a String con un prefijo
+            String nuevaClave = entry.getValue().getName();
+            bookIndexName.put(nuevaClave, entry.getValue());
+        }
     }
 
     private void delete(Node x, long isbn) {
@@ -338,7 +356,25 @@ public class BTree {
 
     // Método de búsqueda por nombre
     public Book searchByName(String name) {
-        return bookIndex.get(name);
+        return bookIndexName.get(name);
+    }
+
+    private Book searchByName(Node x, String name) {
+        for (int i = 0; i < x.n; i++) {
+            if (x.keys[i].getName().equals(name)) {
+                return x.keys[i];
+            }
+            if (!x.leaf) {
+                Book result = searchByName(x.children[i], name);
+                if (result != null) {
+                    return result;
+                }
+            }
+        }
+        if (!x.leaf) {
+            return searchByName(x.children[(int) x.n], name);
+        }
+        return null;
     }
 
     public void getLenghOfEatchMethod(Book book) {

@@ -19,9 +19,7 @@ public class Main {
         BTree bTree = new BTree(2); // Crear un árbol B de ordenamiento 5
         Gson gson = new GsonBuilder().disableHtmlEscaping().create();
 
-        //Aqui se agrega el archivo de Book.csv
         BufferedReader r = new BufferedReader(new FileReader("100Klab01_books.csv"));
-        //Aqui se agrega el archivo de Search.csv
         BufferedReader br = new BufferedReader(new FileReader("100Klab01_search.csv"));
 
         String jsonLine = "";
@@ -74,6 +72,7 @@ public class Main {
                     }
             }
         }
+        bTree.changeKeyMap();
         while ((jsonLine = br.readLine()) != null) {
             String[] parts = jsonLine.split(";");
             String action = parts[0];
